@@ -37,6 +37,12 @@
 </head>
 <body>
 <div class='login-block'>
+    <?php
+    if(isset($_GET['m'])){
+        echo "<span style='color:red'>".$_GET['m']."</span>";
+    }
+
+    ?>
     <form action="check.php" method="post">
         <div class='login-input'>
             <label for="acc">帳號:</label>
