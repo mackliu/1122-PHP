@@ -41,9 +41,12 @@
     if(isset($_GET['m'])){
         echo "<span style='color:red'>".$_GET['m']."</span>";
     }
-
-    ?>
-    <form action="check.php" method="post">
+    
+    if(isset($_GET['login']) && $_GET['login']==1){
+        echo "歡迎你";
+    }else{
+?>
+<form action="check.php" method="post">
         <div class='login-input'>
             <label for="acc">帳號:</label>
             <input type="text" name="acc" id="acc">
@@ -57,6 +60,11 @@
             <input type="reset" value="重置">
         </div>
     </form>
+<?php
+    }
+
+    ?>
+    
 </div>    
 </body>
 </html>
