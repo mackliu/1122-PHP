@@ -38,14 +38,14 @@
 <body>
 <div class='login-block'>
     <?php
-    session_start();
-    if(isset($_SESSION['error'])){
-        echo "<span style='color:red'>".$_SESSION['error']."</span>";
-        unset($_SESSION['error']);
+    date_default_timezone_set("Asia/Taipei");
+    if(isset($_COOKIE['error'])){
+        echo "<span style='color:red'>".$_COOKIE['error']."</span>";
+        unset($_COOKIE['error']);
     }
     
-    if(isset($_SESSION['login']) && !empty($_SESSION['login'])){
-        echo $_SESSION['login']." 歡迎你";
+    if(isset($_COOKIE['login']) && !empty($_COOKIE['login'])){
+        echo $_COOKIE['login']." 歡迎你";
         echo "<a href='logout.php'>登出</a>";
     }else{
 ?>
